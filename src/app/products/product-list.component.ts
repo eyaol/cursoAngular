@@ -6,27 +6,24 @@ import {Component} from "@angular/core"
 })
 
 export class ProductListComponent {
-    pageTitle: string = "Product List";
-    products: any[] = [
+    pageTitle: string = "Pokemon List";
+    imageWidth: number = 50;
+    imageFlag = false;
+    pokemons: any[] = [
         {
-          "productId": 2,
-          "productName": "Garden Cart",
-          "productCode": "GDN-0023",
-          "releaseDate": "March 18, 2019",
-          "description": "15 gallon capacity rolling garden cart",
-          "price": 32.99,
-          "starRating": 4.2,
-          "imageUrl": "assets/images/garden_cart.png"
+          "pokemonId": 1,
+          "pokemonName": "Charmander",
+          "imageUrl": "assets/images/charmander.png"
         },
         {
-          "productId": 5,
-          "productName": "Hammer",
-          "productCode": "TBX-0048",
-          "releaseDate": "May 21, 2019",
-          "description": "Curved claw steel hammer",
-          "price": 8.9,
-          "starRating": 4.8,
-          "imageUrl": "assets/images/hammer.png"
+          "pokemonId": 2,
+          "pokemonName": "Squirtle",
+          "imageUrl": "assets/images/squirtle.png"
         }
       ];
+     
+      toggleImage(): void {
+        this.imageFlag = !this.imageFlag;
+        console.log(this.imageFlag);
+      } 
 }

@@ -15,29 +15,29 @@
             </div>
         </div>
         <div class='table-responsive'>
-            <table class='table' *ngIf="products && products.length">
+            <table class='table' *ngIf="pokemons && pokemons.length">
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
-                                Show Image
+                            <button class='btn btn-primary' (click)='toggleImage()'>
+                                {{imageFlag ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
-                        <th>Product</th>
-                        <th>Code</th>
-                        <th>Available</th>
-                        <th>Price</th>
-                        <th>5 Star Rating</th>
+                        <th>Pokemon</th>
+                        <th>Id</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let p of products'>
-                        <td></td>
-                        <td>{{p.productName}}</td>
-                        <td>{{p.productCode}}</td>
-                        <td>{{p.releaseDate}}</td>
-                        <td>{{p.price}}</td>
-                        <td>{{p.starRating}}</td>
+                    <tr *ngFor='let pokemon of pokemons'>
+                        <td>
+                            <img 
+                            *ngIf='imageFlag'
+                            [src]='pokemon.imageUrl'
+                            [style.width.px]='imageWidth'
+                            >
+                        </td>
+                        <td>{{pokemon.pokemonName}}</td>
+                        <td>{{pokemon.pokemonId}}</td>
                     </tr>
                 </tbody>
             </table>
